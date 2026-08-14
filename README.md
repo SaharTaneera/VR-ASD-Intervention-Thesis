@@ -9,13 +9,23 @@ The system evaluates user movement accuracy in a VR environment by comparing ske
 2. **Classical DTW & Geometric Scoring (`kata_scoring.py`):** Preprocessing pipeline handling missing value interpolation, pelvis centering, orientation normalization, scaling, Savitzky–Golay smoothing, and Dynamic Time Warping (DTW) distance mapping.
 3. **FastAPI Backend (`api.py`):** Real-time evaluation endpoint providing automated progress scores, limb-specific breakdowns, segment windows, and motion-energy penalty calculations.
 
+## 🥽 VR Integration & Data Pipeline
+* **Meta Quest (Oculus) Integration:** Live motion readings and tracking data were captured during gameplay via an Oculus/Meta Quest headset.
+* **Kinematic Estimation:** Because standard headset and controller setups provide limited points, the pipeline utilized kinematic estimation to compute and map full-body joint markers (corresponding to Qualisys optical mocap standards).
+* **Unity Client:** While the core AI backend and scoring models are open-sourced here, the proprietary Unity game client code remains private. The FastAPI backend serves as the bridge, accepting real-time TSV session logs from the game client and returning instant evaluation metrics.
+
 ## 📂 Repository Structure
 
 ├── api.py                      # FastAPI server for real-time session evaluation
+
 ├── siamese_traine.py           # Siamese Transformer network and data pipelines
+
 ├── kata_scoring.py             # Classical DTW scoring and geometric normalization
+
 ├── train_model.py              # Script to fit expert baseline models
+
 ├── evaluate_siamese_model.py   # Cross-validation and evaluation metrics script
+
 └── requirements.txt            # Python dependencies
 
 ## ⚙️ Installation & Setup
