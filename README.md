@@ -61,22 +61,31 @@ uvicorn api:app --host 0.0.0.0 --port 8000
 📊 Dataset & Organization
 The core model training and evaluation utilize optical motion capture data (Qualisys TSV format recording 3D coordinates of 25 body joints).
 
-Public Dataset Source: You can download the underlying karate motion capture dataset (featuring expert katas like Heian Yondan and Bassai Dai) from the EyesWeb Karate Dataset Repository.
+Public Dataset Source: You can download the underlying karate motion capture dataset (featuring expert katas like Heian Yondan and Bassai Dai) from the EyesWeb Karate Dataset Repository. (http://www.infomus.org/karate/eyesweb_dataset_karate_eng.php)
 
 Local Directory Structure: Organize your downloaded TSV files locally for execution as follows:
 
 Plaintext
 C:\Users\ROG\dataset\
 ├── HY-1\    # Target / Reference movement (Heian Yondan)
+
 └── BD-1\    # Contrastive / Negative class (Bassai Dai)
 
 ## 📜 Citation
 If you find this research useful for your work, please cite the repository or related thesis publications, as well as the original dataset source:
 
-Code snippet
+'''bibtex
 @article{niewiadomski2018analysis,
-  title={Analysis of Movement Quality in Full-Body Physical Activities},
-  author={Niewiadomski, Romer and Kolykhalova, Kateryna and Piana, Stefania and Alborno, Paolo and Volpe, Gualtiero and Camurri, Antonio},
-  journal={ACM Transactions on Interactive Intelligent Systems},
-  doi={10.1145/3132369}
+  author   = {Niewiadomski, Radoslaw and Kolykhalova, Ksenia and Piana, Stefania and Alborno, Paolo and Volpe, Gualtiero and Camurri, Antonio},
+  title    = {Analysis of Movement Quality in Full-Body Physical Activities},
+  journal  = {ACM Transactions on Interactive Intelligent Systems},
+  volume   = {9},
+  number   = {1},
+  articleno = {3},
+  numpages = {20},
+  year     = {2018},
+  publisher = {Association for Computing Machinery},
+  address  = {New York, NY, USA},
+  doi      = {10.1145/3132369}
 }
+'''
